@@ -53,7 +53,16 @@ export default class Card extends React.Component {
       return (
         <div className="business-wrapper">
           {dataObj.connectedBusinesses.map(function(object, i){
-            return <span key={i}>{object.businessId}</span>
+            if(object.isHired) {
+              return (<div key={i} className="business">
+                <img src={object.thumbnail}></img>
+                <span className="hired">HIRED</span>
+              </div>);
+            } else {
+              return (<div key={i} className="business">
+                <img src={object.thumbnail}></img>
+              </div>);
+            }
           })}
         </div>
         )
