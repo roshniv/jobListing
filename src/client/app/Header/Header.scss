@@ -1,0 +1,39 @@
+.navbar-default {
+	border-top: 2px solid orange;
+	.navbar-toggle {
+		border: none;
+	}
+}
+.navbar>.container .navbar-brand {
+	margin-left: 0;
+}
+.nav-menu {
+	margin-left: 15%;
+	margin-top: 10px;
+	li a {
+    	padding: 15px 25px;
+    	color: #5a5a5a !important;
+    	&:hover, &.active {
+    		color: #0499ff !important;
+    	}
+    }
+}
+.brand-wrap {
+    padding: 0;
+    margin: 0 -15px;
+    height: 70px;
+    .brand-logo {
+    	background-image: url(https://assets.homeimprovementpages.com.au/images/hipages-logo-simple.png);
+    	height: 50px;
+    	width: 150px;
+    	background-repeat: no-repeat;
+    	z-index: 9999;
+    	margin-top: 5px;
+    	background-size: 70%;
+    }
+    .subtext {
+    	font-size: 12px;
+	    line-height: normal;
+	    margin-top: -7px;
+    }
+}

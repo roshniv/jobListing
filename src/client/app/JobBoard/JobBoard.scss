@@ -1,0 +1,27 @@
+.dashboard {
+	width: 100%;
+	.nav-pills {
+		&>li {
+			padding: 0;
+			text-align: center;
+			border: 1px solid #eee;
+			>a, >a:focus, >a:hover {
+				color: black;
+				border-radius: 0;
+			}
+			&.active {
+				>a, >a:focus, >a:hover {
+					border-bottom: 3px solid orange;
+					background-color: white;
+					font-weight: bold;
+					color: black;
+					border-radius: 0;
+				}
+			}
+			&+li {
+				margin: 0;
+				border-left: 0px;
+			}
+		}
+	}
+}
