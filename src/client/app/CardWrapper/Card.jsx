@@ -9,10 +9,12 @@ export default class Card extends React.Component {
     super(props);
     this.state = {
       dataObj: {},
-      key: 0
+      key: 0,
+      displayCloseOption: false
     };
     this.formatDate = this.formatDate.bind(this);
     this.getConnectedBusinesses = this.getConnectedBusinesses.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
   }
 
   componentWillMount() {
@@ -48,7 +50,7 @@ export default class Card extends React.Component {
   getConnectedBusinesses() {
     var dataObj = this.state.dataObj;
     if (dataObj.connectedBusinesses == null) {
-      return (<div className="subtitle"> Connecting you with businesses</div>);
+      return (<div className="business-wrapper"><div className="subtitle"> Connecting you with businesses</div></div>);
     } else {
       return (
         <div className="business-wrapper">
@@ -69,12 +71,25 @@ export default class Card extends React.Component {
     }
   }
 
+  showDropdown() {
+    this.setState({displayCloseOption: !this.state.displayCloseOption});
+    return false;
+  }
+
   render() {
     var dataObj = this.state.dataObj;
-    var jobId = dataObj.jobId;
+    var displayCloseOption = this.state.displayCloseOption;
 
     return (
       <div className="card">
+        <div className={dataObj.status == 'Closed' ? 'hide' : 'show'}>
+          <div className="option-menu" onClick={this.showDropdown}>
+            <img src="./images/option-menu.png" />
+          </div>
+          <div className={ displayCloseOption ? "dropdown-content show" : "dropdown-content hide" }>
+              <a onClick={this.showDropdown}>Close Job</a>
+          </div>
+        </div>
         <h4 className="title">{dataObj.category}</h4>
         <div className="subtitle">{'Posted On ' + this.formatDate(dataObj.postedDate)}</div>
         <div className="separator">
