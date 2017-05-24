@@ -1,9 +1,6 @@
 import './JobBoard.scss';
-
 import React from 'react';
-import { render } from 'react-dom';
 import { Nav, NavItem } from 'react-bootstrap';
-
 import data from './jobs.json';
 import CardWrapper from '../CardWrapper/CardWrapper.jsx';
 
@@ -26,8 +23,8 @@ export default class JobBoard extends React.Component {
   }
 
   render() {
-    var selectedTab = this.state.selectedTab;
-    
+    let selectedTab = this.state.selectedTab;
+
     return (
       <div className="container dashboard">
         <Nav bsStyle="pills" activeKey={selectedTab == 'open' ? 1 : 2} onSelect={this.handleSelect}>

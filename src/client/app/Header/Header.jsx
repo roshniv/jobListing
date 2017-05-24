@@ -1,7 +1,5 @@
 import './Header.scss';
-
 import React from 'react';
-import { render } from 'react-dom';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 export default class Header extends React.Component {

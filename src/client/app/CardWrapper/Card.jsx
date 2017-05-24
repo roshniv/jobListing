@@ -1,7 +1,5 @@
 import './Card.scss';
-
 import React from 'react';
-import { render } from 'react-dom';
 
 export default class Card extends React.Component {
 
@@ -29,10 +27,10 @@ export default class Card extends React.Component {
 
   formatDate(date) {
     //date is in 2017-04-13 format --- Output will be 13th April 2017
-    var d = new Date(date);
-    var dd = d.getDate();
-    var nth = 'th';
-    var mm = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")[d.getMonth()];
+    let d = new Date(date);
+    let dd = d.getDate();
+    let nth = 'th';
+    let mm = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")[d.getMonth()];
     if(dd>3 && dd<21) {
       nth = 'th';
     } else if (dd % 10 == 1) {
@@ -48,7 +46,7 @@ export default class Card extends React.Component {
   }
 
   getConnectedBusinesses() {
-    var dataObj = this.state.dataObj;
+    let dataObj = this.state.dataObj;
     if (dataObj.connectedBusinesses == null) {
       return (<div className="business-wrapper"><div className="subtitle"> Connecting you with businesses</div></div>);
     } else {
@@ -77,8 +75,8 @@ export default class Card extends React.Component {
   }
 
   render() {
-    var dataObj = this.state.dataObj;
-    var displayCloseOption = this.state.displayCloseOption;
+    let dataObj = this.state.dataObj;
+    let displayCloseOption = this.state.displayCloseOption;
 
     return (
       <div className="card">

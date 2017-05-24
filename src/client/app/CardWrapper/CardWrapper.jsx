@@ -1,7 +1,4 @@
-import './CardWrapper.scss';
-
 import React from 'react';
-import { render } from 'react-dom';
 import Card from './Card.jsx';
 
 export default class CardWrapper extends React.Component {
@@ -12,7 +9,6 @@ export default class CardWrapper extends React.Component {
       selectedTab: 'open',
       data: []
     };
-    //this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentWillMount() {
@@ -36,8 +32,7 @@ export default class CardWrapper extends React.Component {
   }
 
   render() {
-    var selectedTab = this.state.selectedTab;
-    console.log(this.state.data);
+    let selectedTab = this.state.selectedTab;
     return (
       <div className="container card-wrapper">
         {this.state.data.data.jobs.map(function(object, i){
